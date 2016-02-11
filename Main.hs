@@ -6,4 +6,4 @@ main :: IO ()
 main = scotty 3000 $ do
   get "/:word" $ do
     beam <- param "word"
-    html $ mconcat ["<h1>Erin exclaims: ", beam, "</h1>"]
+    html $ mconcat ["<h1>Erin emotes: ", beam, "</h1>"]
