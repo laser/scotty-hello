@@ -16,8 +16,11 @@ main = do
                                 <*> getEnv "DATABASE_USER"
                                 <*> getEnv "DATABASE_PASSWORD"
                                 <*> getEnv "DATABASE_NAME"
+
+  port <- liftM read (getEnv "WEBAPP_LISTEN_PORT")
+
   conn <- PostgreSQL.connect cfg
-  scotty 8080 $ do
+  scotty port $ do
     middleware logStdoutDev
 
     get "/:word" $ do
