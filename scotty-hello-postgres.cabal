@@ -11,4 +11,6 @@ executable          scotty-hello-postgres
     build-depends:  base
                   , postgresql-simple
                   , scotty
+                  , text
                   , transformers
+                  , wai-extra
